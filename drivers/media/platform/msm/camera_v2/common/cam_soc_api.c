@@ -204,8 +204,7 @@ int msm_camera_get_clk_info(struct platform_device *pdev,
 			size_t *num_clk)
 {
 	int rc = 0;
-
-	if (!pdev || (&pdev->dev == NULL) || !clk_info || !clk_ptr || !num_clk)
+	if (!pdev || !clk_info || !clk_ptr || !num_clk)
 		return -EINVAL;
 
 	rc = msm_camera_get_clk_info_internal(&pdev->dev,
@@ -506,8 +505,7 @@ int msm_camera_put_clk_info(struct platform_device *pdev,
 				struct clk ***clk_ptr, int cnt)
 {
 	int rc = 0;
-
-	if (!pdev || (&pdev->dev == NULL) || !clk_info || !clk_ptr)
+	if (!pdev || !clk_info || !clk_ptr)
 		return -EINVAL;
 
 	rc = msm_camera_put_clk_info_internal(&pdev->dev,
